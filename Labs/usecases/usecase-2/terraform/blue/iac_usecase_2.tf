@@ -33,7 +33,7 @@ variable "AMI" {
 }
 
 resource "aws_iam_instance_profile" "rm_iam_profile" {
-  name = "rm_iam_profile"
+  name = "rm_iam_profile_blue_bg"
   role = "EC2JenkinsRole"
 }
 
@@ -44,7 +44,7 @@ variable "EC2_TYPE" {
 
 variable "S3_PATH" {
   type = string
-  default = "s3://risingminervacodebase-rchaturvedi/devops/app"
+  default = "s3://rm-binaries/devops/apps/usecase2"
   description = "Version to be released"
 }
 
@@ -55,7 +55,7 @@ variable "RELEASE_VERSION" {
 }
 
 resource "aws_security_group" "basic_http" {
-  name = "sg_flask-usecase2-blue"
+  name = "sg_flask-usecase2-blue_1"
   description = "Web Security Group for HTTP"
   vpc_id =  var.VPC
   ingress = [
@@ -94,7 +94,7 @@ resource "aws_security_group" "basic_http" {
 }
 
 resource "aws_security_group" "basic_ssh" {
-  name = "sg_ssh-rm-usecase2-blue"
+  name = "sg_ssh-rm-usecase2-blue_1"
   description = "Web Security Group for SSH"
   vpc_id =  var.VPC
   ingress = [
