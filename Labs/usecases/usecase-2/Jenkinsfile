@@ -77,7 +77,6 @@ pipeline {
 //               aws ec2 delete-security-group --group-name sg_flask-usecase2-green_1
 //               aws ec2 delete-security-group --group-name sg_ssh-rm-usecase2-blue_1
 //               aws ec2 delete-security-group --group-name sg_ssh-rm-usecase2-green_1
-//            """
 //       }]
 //     } // End stage
 
