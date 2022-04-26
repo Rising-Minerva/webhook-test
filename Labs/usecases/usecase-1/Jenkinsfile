@@ -1,6 +1,6 @@
 // Defining constant global variables
 def S3_BUCKET = "s3://rm-binaries"
-def S3_BINARY_PATH = "devops/app/"
+def S3_BINARY_PATH = "devops/apps/"
 def S3_TERRAFORM_PATH = "devops/terraform/"
 
 // Pipeline definition
