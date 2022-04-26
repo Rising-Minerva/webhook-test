@@ -27,7 +27,7 @@ variable "AMI" {
   description = "AMI image id for EC2 instance to bake the EC2"
 }
 
-resource "aws_iam_instance_profile" "rm_iam_profile" {
+resource "aws_iam_instance_profile" "rm_iam_profile_2" {
   name = "rm_iam_profile"
   role = "EC2JenkinsRole"
 }
@@ -44,7 +44,7 @@ variable "S3_PATH" {
 }
 
 resource "aws_security_group" "basic_http" {
-  name = "sg_flask-rm2"
+  name = "sg_flask-rm_2"
   description = "Web Security Group for HTTP"
   vpc_id =  var.VPC
   ingress = [
