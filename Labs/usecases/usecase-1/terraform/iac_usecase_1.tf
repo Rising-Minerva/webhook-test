@@ -39,7 +39,7 @@ variable "EC2_TYPE" {
 
 variable "S3_PATH" {
   type = string
-  default = "s3://risingminervacodebase-rchaturvedi/devops/app"
+  default = "s3://rm-binaries/devops/app"
   description = "S3 Path of an deployed image"
 }
 
