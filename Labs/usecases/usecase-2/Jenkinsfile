@@ -64,6 +64,7 @@ pipeline {
        // Running terraform scripts and uploading plan file to s3
       steps {
         sh """
+              sudo su
               aws configure
               aws configure --profile admin
               aws iam remove-role-from-instance-profile --instance-profile-name rm_iam_profile_blue_bg --role-name EC2JenkinsRole --profile admin
