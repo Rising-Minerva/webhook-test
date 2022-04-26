@@ -27,8 +27,8 @@ variable "AMI" {
   description = "AMI image id for EC2 instance to bake the EC2"
 }
 
-resource "aws_iam_instance_profile" "rm_iam_profile_2" {
-  name = "rm_iam_profile"
+resource "aws_iam_instance_profile" "rm_iam_profile" {
+  name = "rm_iam_profile_2"
   role = "EC2JenkinsRole"
 }
 
