@@ -60,26 +60,26 @@ pipeline {
            """
       }
     }
-    stage('cleanup') {
-       // Running terraform scripts and uploading plan file to s3
-      steps {
-        sh """
-              sudo su
-              aws configure
-              aws configure --profile admin
-              aws iam remove-role-from-instance-profile --instance-profile-name rm_iam_profile_blue_bg --role-name EC2JenkinsRole --profile admin
-              aws iam remove-role-from-instance-profile --instance-profile-name rm_iam_profile_blue_bg --role-name RisingMinervaEC2JenkinsRole --profile admin
-              aws iam delete-instance-profile --instance-profile-name rm_iam_profile_blue_bg --profile admin
-              aws iam remove-role-from-instance-profile --instance-profile-name rm_iam_profile_green_bg --role-name EC2JenkinsRole --profile admin
-              aws iam remove-role-from-instance-profile --instance-profile-name rm_iam_profile_green_bg --role-name RisingMinervaEC2JenkinsRole --profile admin
-              aws iam delete-instance-profile --instance-profile-name rm_iam_profile_green_bg --profile admin
-              aws ec2 delete-security-group --group-name sg_flask-usecase2-blue_1
-              aws ec2 delete-security-group --group-name sg_flask-usecase2-green_1
-              aws ec2 delete-security-group --group-name sg_ssh-rm-usecase2-blue_1
-              aws ec2 delete-security-group --group-name sg_ssh-rm-usecase2-green_1
-           """
-      }
-    } // End stage
+//     stage('cleanup') {
+//        // Running terraform scripts and uploading plan file to s3
+//       steps {
+//         sh """
+//               sudo su
+//               aws configure
+//               aws configure --profile admin
+//               aws iam remove-role-from-instance-profile --instance-profile-name rm_iam_profile_blue_bg --role-name EC2JenkinsRole --profile admin
+//               aws iam remove-role-from-instance-profile --instance-profile-name rm_iam_profile_blue_bg --role-name RisingMinervaEC2JenkinsRole --profile admin
+//               aws iam delete-instance-profile --instance-profile-name rm_iam_profile_blue_bg --profile admin
+//               aws iam remove-role-from-instance-profile --instance-profile-name rm_iam_profile_green_bg --role-name EC2JenkinsRole --profile admin
+//               aws iam remove-role-from-instance-profile --instance-profile-name rm_iam_profile_green_bg --role-name RisingMinervaEC2JenkinsRole --profile admin
+//               aws iam delete-instance-profile --instance-profile-name rm_iam_profile_green_bg --profile admin
+//               aws ec2 delete-security-group --group-name sg_flask-usecase2-blue_1
+//               aws ec2 delete-security-group --group-name sg_flask-usecase2-green_1
+//               aws ec2 delete-security-group --group-name sg_ssh-rm-usecase2-blue_1
+//               aws ec2 delete-security-group --group-name sg_ssh-rm-usecase2-green_1
+//            """
+//       }
+//     } // End stage
 
     //Deploy Blue stage
     stage('deploy-blue') {
